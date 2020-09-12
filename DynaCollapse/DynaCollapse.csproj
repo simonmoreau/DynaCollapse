@@ -33,12 +33,15 @@
   <ItemGroup>
     <Reference Include="DynamoServices, Version=2.8.0.2471, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamoVisualProgramming.DynamoServices.2.8.0.2471\lib\net48\DynamoServices.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="DynamoUnits, Version=2.8.0.2471, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.2.8.0.2471\lib\net48\DynamoUnits.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ProtoGeometry, Version=2.8.0.2374, Culture=neutral, processorArchitecture=AMD64">
       <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.2.8.0.2471\lib\net48\ProtoGeometry.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,13 +54,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DynaCollapse_DynamoCustomization.xml" />
     <Content Include="images\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="pkg.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>set SolutionName=DynaCollapse
+
+set packagePath="$(AppData)\Dynamo\Dynamo Core\2.6\packages\$(ProjectName)"
+set binpath="$(AppData)\Dynamo\Dynamo Core\2.6\packages\$(ProjectName)\bin\"
+
+echo %25binpath%25
+
+copy "$(TargetDir)*.*" %25binpath%25
+copy "$(ProjectDir)pkg.json" %25packagePath%25</PostBuildEvent>
+  </PropertyGroup>
 </Project>
