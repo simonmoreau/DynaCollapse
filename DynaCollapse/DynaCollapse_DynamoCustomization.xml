@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>DynaCollapse</name>
+  </assembly>
+  <namespaces>
+    <namespace name="DynaCollapse">
+      <category>DynaCollapse</category>
+    </namespace>
+  </namespaces>
+</doc>

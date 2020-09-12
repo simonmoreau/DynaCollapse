@@ -1,0 +1,20 @@
+{
+  "license": "",
+  "file_hash": null,
+  "name": "DynaCollapse",
+  "version": "0.0.1",
+  "description": "A Dynamo package for running the Wave Function Collapse Algorithm in Revit",
+  "group": "",
+  "keywords": null,
+  "dependencies": [],
+  "contents": "",
+  "engine_version": "2.6.0.0",
+  "engine": "dynamo",
+  "engine_metadata": "",
+  "site_url": "",
+  "repository_url": "",
+  "contains_binaries": true,
+  "node_libraries": [
+    "DynaCollapse, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
